@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>groovyOsgi</artifactId>
+		<groupId>de.indisopht</groupId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.indisopht</groupId>
+	<artifactId>serviceRequestor</artifactId>
+	<version>1.0.0</version>
+	<packaging>bundle</packaging>
+	<name>ServiceRequestor</name>
+	<description>requests services from ServiceProvider</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.4.3</version>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<Bundle-Activator>de.indisopht.serviceRequestor.RequestorActivator</Bundle-Activator>
+					<Bundle-Name>ServiceRequestor</Bundle-Name>
+					<Bundle-Description>requests groovy services</Bundle-Description>
+					<Bundle-Vendor>Stefan Maassen</Bundle-Vendor>
+					<Bundle-Date>2008/11/26</Bundle-Date>
+					<Export-Package>de.indisopht.serviceRequestor</Export-Package>
+					<Import-Package>de.indisopht.serviceProvider</Import-Package>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>de.indisopht</groupId>
+			<artifactId>serviceProvider</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

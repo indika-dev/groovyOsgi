@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Export-Package: de.indisopht.serviceRequestor;uses:="org.ops4j.peaberr
+ y.builders,org.apache.log4j,org.osgi.framework,org.ops4j.peaberry,de.
+ indisopht.serviceProvider,com.google.inject.binder,com.google.inject"
+Built-By: rapper
+Tool: Bnd-0.0.255
+Bundle-Name: ServiceRequestor
+Created-By: Apache Maven Bundle Plugin
+Bundle-Version: 1.0.0
+Build-Jdk: 1.6.0_11
+Bnd-LastModified: 1229858095453
+Bundle-Activator: de.indisopht.serviceRequestor.RequestorActivator
+Bundle-ManifestVersion: 2
+Bundle-Description: requests services from ServiceProvider
+Import-Package: com.google.inject,com.google.inject.binder,de.indisoph
+ t.serviceProvider,de.indisopht.serviceRequestor,org.apache.log4j,org.
+ ops4j.peaberry,org.ops4j.peaberry.builders,org.osgi.framework
+Bundle-SymbolicName: de.indisopht.serviceRequestor

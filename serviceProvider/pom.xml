@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>groovyOsgi</artifactId>
+		<groupId>de.indisopht</groupId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.indisopht</groupId>
+	<artifactId>serviceProvider</artifactId>
+	<version>1.0.0</version>
+	<packaging>bundle</packaging>
+	<name>ServiceProvider</name>
+	<description>provides groovy services</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.4.3</version>
+				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<Bundle-Activator>de.indisopht.serviceProvider.osgi.Activator</Bundle-Activator>
+					<Bundle-Name>ServiceProvider</Bundle-Name>
+					<Bundle-Description>provides groovy services</Bundle-Description>
+					<Bundle-Vendor>Stefan Maassen</Bundle-Vendor>
+					<Bundle-Date>2008/11/26</Bundle-Date>
+					<Embed-Dependency>*;scope=compile|runtime;type=!pom;inline=true</Embed-Dependency>
+					<DynamicImport-Package>de.indisopht.groovy.*</DynamicImport-Package>
+					<Export-Package>de.indisopht.serviceProvider</Export-Package>
+					<Import-Package>groovy.*,org.codehaus.*</Import-Package>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>de.indisopht</groupId>
+			<artifactId>groovy-guice</artifactId>
+			<version>0.3.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>1.6.3</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>

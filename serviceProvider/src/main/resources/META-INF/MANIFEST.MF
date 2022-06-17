@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Export-Package: de.indisopht.serviceProvider.osgi;uses:="org.apache.lo
+ g4j,de.indisopht.guice.groovy.spi,org.osgi.framework,org.ops4j.peaber
+ ry,com.google.inject.name,com.google.inject.binder,de.indisopht.servi
+ ceProvider,com.google.inject",de.indisopht.serviceProvider,de.indisop
+ ht.groovy
+Built-By: rapper
+Tool: Bnd-0.0.255
+Bundle-Name: ServiceProvider
+Created-By: Apache Maven Bundle Plugin
+DynamicImport-Package: de.indisopht.groovy.*,groovy.*,org.codehaus.*
+Build-Jdk: 1.6.0_11
+Bundle-Version: 1.0.0
+Bnd-LastModified: 1229810649715
+Bundle-Activator: de.indisopht.serviceProvider.osgi.Activator
+Bundle-ManifestVersion: 2
+Bundle-Description: provides groovy services
+Bundle-SymbolicName: de.indisopht.serviceProvider
+Import-Package: com.google.inject,com.google.inject.binder,com.google.
+ inject.name,de.indisopht.guice.groovy.spi,de.indisopht.serviceProvide
+ r,de.indisopht.serviceProvider.osgi,org.apache.log4j,org.ops4j.peaber
+ ry,org.osgi.framework
+Originally-Created-By: Apache Maven Bundle Plugin
+
